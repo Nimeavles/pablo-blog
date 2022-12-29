@@ -1,0 +1,11 @@
+{
+  "name": "@pablo/prettier-config",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^2.8.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
