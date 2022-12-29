@@ -1,10 +1,5 @@
-import { Button } from "ui";
+import { Button } from "@mui/material";
 
-export default function Web() {
-  return (
-    <div>
-      <h1>Web</h1>
-      <Button />
-    </div>
-  );
+export default function Index() {
+  return <Button variant="contained">Hello World</Button>;
 }
