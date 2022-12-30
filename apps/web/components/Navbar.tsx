@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import logo from "../assets/logo.png";
-import { ChangeColorTheme } from "./ChangeColorTheme";
 
 const pages = ["📋Artículos", "🏠Inicio", "💵Donaciones"];
 
@@ -112,7 +111,6 @@ export function Navbar() {
               </Button>
             ))}
           </Box>
-          <ChangeColorTheme />
         </Toolbar>
       </Container>
     </AppBar>
