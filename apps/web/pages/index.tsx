@@ -1,5 +1,11 @@
-import { Button } from "@mui/material";
+import { Box } from "@mui/material";
+import homebg from "../assets/home-bg.png";
+import { Navbar } from "../components";
 
 export default function Index() {
-  return <Button variant="contained">Hello World</Button>;
+  return (
+    <Box minHeight="100vh" bgcolor="primary.main">
+      <Navbar />
+    </Box>
+  );
 }

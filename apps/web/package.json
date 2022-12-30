@@ -11,6 +11,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fontsource/montserrat": "^4.5.13",
+    "@fontsource/pontano-sans": "^4.5.10",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.2",
     "next": "13.0.0",

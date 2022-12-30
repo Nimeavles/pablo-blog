@@ -3,6 +3,8 @@ import type { AppProps } from "next/app";
 import { CssBaseline, ThemeProvider as MUIProvider } from "@mui/material";
 import { DarkTheme, LightTheme } from "../themes";
 import { ThemeContext, ThemeProvider } from "../context/theme";
+import "@fontsource/montserrat";
+import "@fontsource/pontano-sans";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useContext(ThemeContext);
