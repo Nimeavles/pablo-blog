@@ -10,8 +10,10 @@ import {
   MenuItem,
   Container,
   Button,
+  TextField,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
 import logo from "../assets/logo.png";
 
 const pages = ["📋Artículos", "🏠Inicio", "💵Donaciones"];
@@ -28,7 +30,7 @@ export function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -70,6 +72,22 @@ export function Navbar() {
                   </Typography>
                 </MenuItem>
               ))}
+              <MenuItem onClick={handleCloseNavMenu}>
+                <IconButton
+                  sx={{
+                    width: "auto",
+                    paddingX: "20px",
+                    borderRadius: "50px",
+                    backgroundColor: "secondary.main",
+                    "&:hover": {
+                      backgroundColor: "secondary.light",
+                    },
+                  }}
+                >
+                  <SearchIcon />
+                  <Typography sx={{ ml: 1 }}>Buscar...</Typography>
+                </IconButton>
+              </MenuItem>
             </Menu>
           </Box>
           <Image
@@ -111,6 +129,21 @@ export function Navbar() {
               </Button>
             ))}
           </Box>
+          <IconButton
+            sx={{
+              width: "auto",
+              paddingX: "20px",
+              borderRadius: "50px",
+              backgroundColor: "secondary.main",
+              display: { xs: "none", md: "flex" },
+              "&:hover": {
+                backgroundColor: "secondary.light",
+              },
+            }}
+          >
+            <SearchIcon />
+            <Typography sx={{ ml: 1 }}>Buscar...</Typography>
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
