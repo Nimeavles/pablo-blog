@@ -1,6 +1,8 @@
 const withMDX = require("@next/mdx")({
+  // By default only the .mdx extension is supported.
   extension: /\.mdx?$/,
   options: {
+    providerImportSource: "@mdx-js/react",
     remarkPlugins: [],
     rehypePlugins: [],
   },

@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import Container from "@mui/material/Container";
+import { LatestArticles } from "../components";
 import { PageLayout } from "../layouts";
 
 const metaData = {
@@ -32,7 +33,9 @@ export default function Index() {
         }}
         bgcolor="primary.main"
       >
-        <Container maxWidth="lg"></Container>
+        <Container maxWidth="lg">
+          <LatestArticles />
+        </Container>
       </Box>
     </PageLayout>
   );

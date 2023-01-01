@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+body main {
+  display: grid;
+  place-items: center;
+}
+
+main h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.componentContainer {
+  width: 40vw;
+}
+
+@media (max-width: 650px) {
+  .componentContainer {
+    width: 70vw;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 900px) {
+  .componentContainer {
+    width: 60vw;
+  }
+}
