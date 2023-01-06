@@ -15,19 +15,28 @@ export const ArticleCard = ({
 }: Props) => {
   return (
     <Link href={`/posts/${title}`}>
-      <ListItem sx={{ display: "flex", width: "80%" }}>
-        <Image src={image} alt="image" width={70} height={70} />
+      <ListItem
+        sx={{
+          display: "flex",
+          width: { md: "80%" },
+        }}
+      >
+        <Image src={image} alt="image" width={60} height={60} />
         <Box>
           <Typography
             color="secondary.main"
             fontFamily="Pontano Sans"
             fontWeight="bold"
             fontStyle="italic"
-            fontSize="22px"
+            fontSize={{ xs: "1.125em", sm: "1.375rem" }}
           >
             {title}
           </Typography>
-          <Typography color="#ccc" fontSize="15px" fontFamily="montserrat">
+          <Typography
+            color="#ccc"
+            fontSize={{ xs: "13px", sm: "15px" }}
+            fontFamily="montserrat"
+          >
             {description}
           </Typography>
         </Box>
