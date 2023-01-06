@@ -44,9 +44,9 @@ export default function Index({ articles }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getFiles("./data/posts");
+  const posts = await getFiles("./data/posts", 5);
   const articles = posts.map((post) => ({
-    titles: post.replace(/\.mdx/, ""),
+    titles: post.replace(/\.mdx/, "").replace("-", " "),
   }));
 
   return {

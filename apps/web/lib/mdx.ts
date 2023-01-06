@@ -4,8 +4,13 @@ import { serialize } from "next-mdx-remote/serialize";
 import matter from "gray-matter";
 import remarkGfm from "remark-gfm";
 
-export const getFiles = async (path: string) => {
+export const getFiles = async (path: string, length?: number) => {
   const files = await readdir(join(process.cwd(), path));
+
+  if (length && files.length > length) {
+    files.length = length;
+  }
+
   return files;
 };
 

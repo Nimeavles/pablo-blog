@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import logo from "../assets/logo.png";
 import Link from "next/link";
 
 const pages = [
@@ -68,12 +67,14 @@ export function Navbar() {
             >
               {pages.map(({ page, path }) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography
-                    sx={{ fontFamily: "Pontano Sans" }}
-                    textAlign="center"
-                  >
-                    {page}
-                  </Typography>
+                  <Link href={path}>
+                    <Typography
+                      sx={{ fontFamily: "Pontano Sans" }}
+                      textAlign="center"
+                    >
+                      {page}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
               <MenuItem onClick={handleCloseNavMenu}>
@@ -95,7 +96,7 @@ export function Navbar() {
             </Menu>
           </Box>
           <Image
-            src={logo}
+            src="/logo.png"
             alt="logo"
             height={40}
             width={40}
