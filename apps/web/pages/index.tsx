@@ -1,7 +1,10 @@
 import { Box } from "@mui/material";
 import Container from "@mui/material/Container";
+import { GetStaticProps } from "next";
 import { LatestArticles } from "../components";
+import { Props } from "../interfaces/HomePage";
 import { PageLayout } from "../layouts";
+import { getFiles } from "../lib";
 
 const metaData = {
   title: "Inicio - Pablo's Blog",
@@ -16,7 +19,7 @@ const metaData = {
   ],
 };
 
-export default function Index() {
+export default function Index({ articles }: Props) {
   return (
     <PageLayout
       title={metaData.title}
@@ -33,9 +36,22 @@ export default function Index() {
         bgcolor="primary.main"
       >
         <Container maxWidth="lg">
-          <LatestArticles />
+          <LatestArticles articles={articles} />
         </Container>
       </Box>
     </PageLayout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await getFiles("./data/posts");
+  const articles = posts.map((post) => ({
+    titles: post.replace(/\.mdx/, ""),
+  }));
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
