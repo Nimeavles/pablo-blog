@@ -4,7 +4,7 @@ import { GetStaticProps } from "next";
 import { LatestArticles } from "../components";
 import { Props } from "../interfaces/HomePage";
 import { PageLayout } from "../layouts";
-import { getFiles } from "../lib";
+import { getAllFilesFrontMatter } from "../lib/mdx";
 
 const metaData = {
   title: "Inicio - Pablo's Blog",
@@ -19,7 +19,7 @@ const metaData = {
   ],
 };
 
-export default function Index({ articles }: Props) {
+export default function Index({ posts }: Props) {
   return (
     <PageLayout
       title={metaData.title}
@@ -36,7 +36,7 @@ export default function Index({ articles }: Props) {
         bgcolor="primary.main"
       >
         <Container maxWidth="lg">
-          <LatestArticles articles={articles} />
+          <LatestArticles posts={posts} />
         </Container>
       </Box>
     </PageLayout>
@@ -44,14 +44,11 @@ export default function Index({ articles }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getFiles("./data/posts", 5);
-  const articles = posts.map((post) => ({
-    titles: post.replace(/\.mdx/, "").replace("-", " "),
-  }));
+  const posts = await getAllFilesFrontMatter(5);
 
   return {
     props: {
-      articles,
+      posts,
     },
   };
 };

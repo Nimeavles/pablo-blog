@@ -1,8 +1,9 @@
-import { Box, List, Typography } from "@mui/material";
+import { Box, List, ListItem, Typography } from "@mui/material";
+import Link from "next/link";
 import { Props } from "../interfaces/HomePage";
 import { ArticleCard } from "./ArticleCard";
 
-export const LatestArticles = ({ articles }: Props) => {
+export const LatestArticles = ({ posts }: Props) => {
   return (
     <Box>
       <Typography
@@ -15,13 +16,27 @@ export const LatestArticles = ({ articles }: Props) => {
         Últimos artículos
       </Typography>
       <List sx={{ marginLeft: "25px", marginBottom: "30px" }}>
-        {articles.map((article) => (
+        {posts.map((post) => (
           <ArticleCard
-            key={article.titles}
-            title={article.titles}
-            description="some random text for making sure"
+            key={post.title}
+            title={post.title}
+            description={post.description}
+            slug={post.slug}
+            image={`/${post.language}.svg`}
           />
         ))}
+        <ListItem>
+          <Link href="/articles">
+            <Typography
+              fontFamily="montserrat"
+              fontWeight="bold"
+              color="secondary.dark"
+              ml="6px"
+            >
+              ➡️ Ver más
+            </Typography>
+          </Link>
+        </ListItem>
       </List>
     </Box>
   );

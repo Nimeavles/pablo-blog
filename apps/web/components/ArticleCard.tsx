@@ -6,15 +6,17 @@ interface Props {
   title: string;
   description: string;
   image?: any;
+  slug: string;
 }
 
 export const ArticleCard = ({
   title,
   image = "/js.svg",
   description,
+  slug,
 }: Props) => {
   return (
-    <Link href={`/posts/${title}`}>
+    <Link href={`/posts/${slug}`}>
       <ListItem
         sx={{
           display: "flex",

@@ -1,5 +1,8 @@
 export interface Props {
-  articles: {
-    titles: string;
+  posts: {
+    title: string;
+    description: string;
+    slug: string;
+    language: "js" | "ts";
   }[];
 }
