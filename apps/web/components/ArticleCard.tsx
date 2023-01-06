@@ -21,6 +21,12 @@ export const ArticleCard = ({
         sx={{
           display: "flex",
           width: { md: "80%" },
+          transition: "all .3s ease",
+          "&:hover": {
+            backgroundColor: "#20252c",
+            borderRadius: "5px",
+            transform: "scale(1.05, 1.05)",
+          },
         }}
       >
         <Image src={image} alt="image" width={60} height={60} />
