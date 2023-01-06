@@ -26,7 +26,7 @@ export default function Index() {
       <Box
         sx={{
           minHeight: {
-            md: "calc(100vh - 75px)",
+            md: "calc(100vh - 69px)",
             sm: "calc(100vh - 64px)",
             xs: "calc(100vh - 56px)",
           },

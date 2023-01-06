@@ -1,7 +1,6 @@
 {
   "name": "web",
   "version": "0.0.0",
-  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -19,10 +18,13 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.2",
     "@next/mdx": "^13.1.1",
+    "gray-matter": "4.0.3",
+    "mdx-prism": "0.3.4",
     "next": "13.0.0",
     "next-mdx-remote": "4.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remark-gfm": "3.0.1",
     "ui": "*"
   },
   "devDependencies": {
