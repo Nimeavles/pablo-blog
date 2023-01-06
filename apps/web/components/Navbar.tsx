@@ -10,13 +10,17 @@ import {
   MenuItem,
   Container,
   Button,
-  TextField,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import logo from "../assets/logo.png";
+import Link from "next/link";
 
-const pages = ["📋Artículos", "🏠Inicio", "💵Donaciones"];
+const pages = [
+  { page: "📋Artículos", path: "/posts" },
+  { page: "🏠Inicio", path: "/" },
+  { page: "💵Donaciones", path: "/support" },
+];
 
 export function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -62,7 +66,7 @@ export function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {pages.map(({ page, path }) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography
                     sx={{ fontFamily: "Pontano Sans" }}
@@ -114,19 +118,27 @@ export function Navbar() {
             {"Pablo's Blog"}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "white",
-                  display: "block",
-                  textTransform: "capitalize",
-                }}
-              >
-                {page}
-              </Button>
+            {pages.map(({ page, path }) => (
+              <Link href={path} key={page}>
+                <Box
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    ml: 2,
+                    color: "white",
+                    display: "block",
+                    textTransform: "capitalize",
+                    fontFamily: "Pontano Sans",
+                    fontWeight: "600",
+                    fontSize: "18px",
+                    "&:hover": {
+                      cursor: "pointer",
+                    },
+                  }}
+                >
+                  {page}
+                </Box>
+              </Link>
             ))}
           </Box>
           <IconButton
