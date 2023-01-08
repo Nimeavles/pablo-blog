@@ -1,5 +1,4 @@
 import { Box, List, ListItem, Typography } from "@mui/material";
-import Link from "next/link";
 import { Props } from "../interfaces/HomePage";
 import { ArticleCard } from "./ArticleCard";
 

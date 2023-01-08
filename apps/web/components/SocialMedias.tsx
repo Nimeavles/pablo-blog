@@ -17,10 +17,8 @@ export const SocialMedias = () => {
   return (
     <Box>
       {socialMediasIcons.map((socialMedia, index) => (
-        <Link href={socialMedia.media} target="_blank">
-          <IconButton key={index} color="secondary">
-            {socialMedia.component}
-          </IconButton>
+        <Link href={socialMedia.media} target="_blank" key={index}>
+          <IconButton color="secondary">{socialMedia.component}</IconButton>
         </Link>
       ))}
     </Box>
