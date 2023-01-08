@@ -1,8 +1,8 @@
-import { ButtonGroup, IconButton } from "@mui/material";
+import Link from "next/link";
+import { Box, IconButton } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import Link from "next/link";
 
 const socialMediasIcons = [
   {
@@ -15,16 +15,14 @@ const socialMediasIcons = [
 
 export const SocialMedias = () => {
   return (
-    <ButtonGroup size="large">
+    <Box>
       {socialMediasIcons.map((socialMedia, index) => (
         <Link href={socialMedia.media} target="_blank">
-          <IconButton
-            children={socialMedia.component}
-            key={index}
-            color="secondary"
-          />
+          <IconButton key={index} color="secondary">
+            {socialMedia.component}
+          </IconButton>
         </Link>
       ))}
-    </ButtonGroup>
+    </Box>
   );
 };

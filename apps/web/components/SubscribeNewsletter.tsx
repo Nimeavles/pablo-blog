@@ -29,7 +29,6 @@ export const SubscribeNewsletter = () => {
       <Box display="flex" alignItems="center" gap={1}>
         <input placeholder="Correo Electrónico" style={styles} />
         <IconButton
-          children={<SendIcon />}
           sx={{
             backgroundColor: "secondary.main",
             width: "50px",
@@ -39,7 +38,9 @@ export const SubscribeNewsletter = () => {
               backgroundColor: "secondary.dark",
             },
           }}
-        />
+        >
+          <SendIcon />
+        </IconButton>
       </Box>
       <Typography
         variant="subtitle2"
