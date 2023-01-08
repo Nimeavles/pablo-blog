@@ -16,7 +16,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Link from "next/link";
 
 const pages = [
-  { page: "📋Artículos", path: "/posts" },
+  { page: "📋Artículos", path: "/articles" },
   { page: "🏠Inicio", path: "/" },
   { page: "💵Donaciones", path: "/support" },
 ];

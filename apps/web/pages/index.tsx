@@ -1,10 +1,10 @@
-import { Box } from "@mui/material";
-import Container from "@mui/material/Container";
+import { Typography } from "@mui/material";
 import { GetStaticProps } from "next";
-import { LatestArticles } from "../components";
+import Link from "next/link";
+import { ArticlesList } from "../components";
 import { Props } from "../interfaces/HomePage";
 import { PageLayout } from "../layouts";
-import { getAllFilesFrontMatter } from "../lib/mdx";
+import { getAllFilesFrontMatter } from "../lib";
 
 const metaData = {
   title: "Inicio - Pablo's Blog",
@@ -26,19 +26,26 @@ export default function Index({ posts }: Props) {
       description={metaData.description}
       keywords={metaData.keywords}
     >
-      <Box
-        sx={{
-          minHeight: {
-            sm: "calc(100vh - 64px)",
-            xs: "calc(100vh - 56px)",
-          },
-        }}
-        bgcolor="primary.main"
+      <Typography
+        variant="h6"
+        fontFamily="montserrat"
+        fontWeight="bold"
+        color="white"
+        pt="20px"
       >
-        <Container maxWidth="lg">
-          <LatestArticles posts={posts} />
-        </Container>
-      </Box>
+        Últimos artículos
+      </Typography>
+      <ArticlesList posts={posts} />
+      <Link href="/articles">
+        <Typography
+          fontFamily="montserrat"
+          fontWeight="bold"
+          color="secondary.dark"
+          ml="6px"
+        >
+          ➡️ Ver más
+        </Typography>
+      </Link>
     </PageLayout>
   );
 }

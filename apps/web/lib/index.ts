@@ -1,1 +1,1 @@
-export { getFileBySlug, getFiles } from "./mdx";
+export { getFileBySlug, getFiles, getAllFilesFrontMatter } from "./mdx";

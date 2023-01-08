@@ -27,10 +27,19 @@ export const ArticleCard = ({
             borderRadius: "5px",
             transform: "scale(1.05, 1.05)",
           },
+          "&:hover::after": {
+            md: {
+              content: '"➡️"',
+              position: "absolute",
+              right: "0",
+              margin: "auto",
+              marginRight: "50px",
+            },
+          },
         }}
       >
         <Image src={image} alt="image" width={60} height={60} />
-        <Box>
+        <Box ml="10px">
           <Typography
             color="secondary.main"
             fontFamily="Pontano Sans"

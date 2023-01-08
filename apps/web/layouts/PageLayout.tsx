@@ -1,6 +1,7 @@
 import { FC, ReactNode } from "react";
 import Head from "next/head";
 import { Navbar } from "../components";
+import { Box, Container } from "@mui/material";
 
 interface Props {
   title: string;
@@ -32,7 +33,17 @@ export const PageLayout: FC<Props> = ({
         <meta name="keywords" content={keywords.toString()} />
       </Head>
       <Navbar />
-      {children}
+      <Box
+        sx={{
+          minHeight: {
+            sm: "calc(100vh - 64px)",
+            xs: "calc(100vh - 56px)",
+          },
+        }}
+        bgcolor="primary.main"
+      >
+        <Container maxWidth="lg">{children}</Container>
+      </Box>
     </>
   );
 };

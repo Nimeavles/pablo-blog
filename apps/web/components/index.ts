@@ -1,3 +1,4 @@
 export * from "./Navbar";
-export * from "./LatestArticles";
+export * from "./ArticlesList";
 export * from "./MDXComponents";
+export * from "./AllArticles";
