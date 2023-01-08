@@ -6,6 +6,7 @@ import "@fontsource/montserrat";
 import "@fontsource/pontano-sans";
 import { MDXComponents } from "../components";
 import { theme, ThemeProvider } from "ui";
+import "../styles/globals.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
