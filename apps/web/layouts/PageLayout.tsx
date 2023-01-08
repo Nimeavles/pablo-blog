@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import Head from "next/head";
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 import { Box, Container } from "@mui/material";
 
 interface Props {
@@ -44,6 +44,7 @@ export const PageLayout: FC<Props> = ({
       >
         <Container maxWidth="lg">{children}</Container>
       </Box>
+      <Footer />
     </>
   );
 };
